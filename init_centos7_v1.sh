@@ -250,3 +250,6 @@ sudo yum update -y
 
 # enable nginx to write files
 sudo setenforce 0
+
+# notify we finished init
+curl http://crm.convertial.com/ws/1/machine/init_machine_finish
