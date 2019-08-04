@@ -22,7 +22,7 @@ sudo yum install -y epel-release
 sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 
 # install php on nginx
-sudo yum install -y git vim htop nginx php70w php70w-bcmath php70w-cli php70w-common php70w-fpm php70w-mbstring php70w-mcrypt php70w-mysql php70w-xml unzip wget p7zip
+sudo yum install -y git vim htop nginx php70w php70w-bcmath php70w-cli php70w-common php70w-fpm php70w-mbstring php70w-mcrypt php70w-mysql php70w-xml unzip wget p7zip sysstat
 
 sudo rm /etc/nginx/nginx.conf
 sudo rm /etc/nginx/conf.d/localhost_https.conf.disabled
@@ -150,10 +150,12 @@ sudo firewall-cmd --reload
 # start the webserver
 sudo service nginx start
 sudo service php-fpm start 
+sudo service sysstat restart
 
 # start service on reboot
 sudo chkconfig nginx on
 sudo chkconfig php-fpm on
+sudo chkconfig sysstat on
 
 # setup ssh login for the nginx user (starting the nginx service have already created the user/group)
 sudo service nginx stop
