@@ -247,6 +247,11 @@ fi
 # fix nginx creds
 sudo chown -R nginx:nginx /var/www/html
 
+# report v1
+sudo wget https://raw.githubusercontent.com/devConvert/pub/master/report_v1.sh -O /root/report_v1.sh -q
+sudo chmod u+x /root/report_v1.sh
+sudo ln -sf /root/report_v1.sh /root/report.sh
+
 # update os to latest kernel
 sudo yum update -y
 
