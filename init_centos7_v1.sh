@@ -66,7 +66,7 @@ http {
         location / {
             root     /var/www/html;
             index    index.php index.htm index.html;
-            # try_files $uri $uri/ /index.php?$args;
+            # try_files \$uri \$uri/ /index.php?\$args;
         }
 
         location ~ \.php$ {
@@ -104,7 +104,7 @@ server {
 	location / {
 			root     /var/www/html;
 			index    index.php index.htm index.html;
-			# try_files $uri $uri/ /index.php?$args;
+			# try_files \$uri \$uri/ /index.php?\$args;
 	}
 
 	location ~ \.php$ {
